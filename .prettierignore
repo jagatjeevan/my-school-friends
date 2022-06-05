@@ -1,0 +1,8 @@
+package-lock.json
+node_modules/
+out/
+.next/
+coverage
+npm-audit.html
+helm
+README.md

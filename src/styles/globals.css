@@ -1,0 +1,46 @@
+:root {
+  --body-font-family: Helvetica Neue, sans-serif;
+  --body-background-color: #efefef;
+  --app-error-color: #c00;
+  --app-button-background-color: #aeaeae;
+
+  --panel-header-background-color: #cecece;
+
+  --selected-option-background-color: #dfdfdf;
+  
+  --app-border: #a7a7a7 solid 1px;
+  --app-border-radius: 5px;
+
+  --app-spacer: 10px;
+}
+
+html,
+body,
+#__next {
+  padding: 0;
+  margin: 0;
+  font-family: var(--body-font-family);
+  background-color: var(--body-background-color);
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.error {
+  color: var(--app-error-color);
+}
+
+button, .button {
+  background-color: var(--app-button-background-color);
+  border: 0;
+  padding: var(--app-spacer);
+  border-radius: var(--app-border-radius);
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.loginPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loginProviderContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--app-spacer);
+    border-bottom: var(--app-border);
+    margin-bottom: var(--app-spacer);
+}
+
+.loginOptions {
+    border: var(--app-border);
+    padding: calc(var(--app-spacer)/2);
+    margin-bottom: var(--app-spacer);
+    border-radius: var(--app-border-radius);
+    font-size: 0.8em;
+}
+
+.selectedClass {
+    background-color: var(--selected-option-background-color);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: var(--app-spacer)
+}
+
+.fullWidth {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.actionButtons {
+    grid-column-start: 2;
+}
+
+.actionButtons input[type="submit"] {
+    margin-right: var(--app-spacer);
+}

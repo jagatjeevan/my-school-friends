@@ -1,0 +1,13 @@
+.panelContainer {
+    border: var(--app-border);
+    border-radius: var(--app-border-radius);
+}
+
+.panelContainer header{
+    background-color: var(--panel-header-background-color);
+    padding: calc(var(--app-spacer)/2) var(--app-spacer);
+}
+
+.panelContainer section {
+    padding: var(--app-spacer);
+}

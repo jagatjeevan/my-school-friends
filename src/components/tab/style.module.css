@@ -1,0 +1,23 @@
+.tabHeaderContainer {
+    border-bottom: var(--app-border);
+    display: flex;
+    margin-bottom: var(--app-spacer);
+}
+.tabHeaderContainer .tabHeaderitem:first-of-type {
+    margin-left: 10px;
+}
+
+.tabHeaderitem {
+    border: var(--app-border);
+    border-bottom-color: var(--body-background-color);
+    padding: calc(var(--app-spacer)/2) var(--app-spacer);
+    margin-left: 2px;
+    border-top-left-radius: var(--app-border-radius);
+    border-top-right-radius: var(--app-border-radius);
+    font-size: 0.8em;
+}
+
+.selectedTabHeader {
+    position: relative;
+    bottom: -1px;
+}
