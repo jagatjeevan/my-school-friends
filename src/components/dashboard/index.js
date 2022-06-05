@@ -3,7 +3,7 @@ import { logoutUser } from '../../firebase/auth';
 
 function Dashboard(props) {
   const { authContext } = props;
-  const { state: authState, dispatch: authDispatch } = authContext;
+  const { dispatch: authDispatch } = authContext;
 
   const handleSignout = () => {
     logoutUser();
