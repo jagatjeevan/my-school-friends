@@ -15,6 +15,7 @@ function Home(props) {
     };
 
     userLoggedIn();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (authState.auth && authState.auth.uid) return <Dashboard />;
