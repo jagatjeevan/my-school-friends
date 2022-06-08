@@ -15,15 +15,15 @@ const Login = () => {
     switch (loginProviderObj.id) {
       case enabledLoginProvider.loginWithEmailAndPassword.id:
         setSelectedLoginProvider(enabledLoginProvider.loginWithEmailAndPassword.id);
-        return;
+        break;
       case enabledLoginProvider.googleAuthenticator.id:
         setSelectedLoginProvider(enabledLoginProvider.googleAuthenticator.id);
-        return;
+        break;
       case enabledLoginProvider.facebookAuthenticator.id:
         setSelectedLoginProvider(enabledLoginProvider.facebookAuthenticator.id);
-        return;
+        break;
       default:
-        return null;
+        break;
     }
   };
 
