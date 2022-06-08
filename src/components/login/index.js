@@ -3,6 +3,7 @@ import labels from '../../config/label';
 import enabledLoginProvider from '../../config/loginPoviders';
 import Panel from '../panel';
 import LoginWithEmailAndPassword from './LoginWithEmailAndPassword';
+import LoginWithFacebookAuthenticator from './LoginWithFacebookAuthenticator';
 import LoginWithGoogleAuthenticator from './LoginWithGoogleAuthenticator';
 import styles from './style.module.css';
 
@@ -11,14 +12,18 @@ const Login = () => {
 
   const activateOnEnter = () => {};
   const selectProvider = (loginProviderObj) => {
-    if (
-      loginProviderObj.id === (enabledLoginProvider.loginWithEmailAndPassword &&
-      enabledLoginProvider.loginWithEmailAndPassword.id)
-    ) {
-      setSelectedLoginProvider(enabledLoginProvider.loginWithEmailAndPassword.id);
-    }
-    if (loginProviderObj.id === enabledLoginProvider.googleAuthenticator.id) {
-      setSelectedLoginProvider(enabledLoginProvider.googleAuthenticator.id);
+    switch (loginProviderObj.id) {
+      case enabledLoginProvider.loginWithEmailAndPassword.id:
+        setSelectedLoginProvider(enabledLoginProvider.loginWithEmailAndPassword.id);
+        return;
+      case enabledLoginProvider.googleAuthenticator.id:
+        setSelectedLoginProvider(enabledLoginProvider.googleAuthenticator.id);
+        return;
+      case enabledLoginProvider.facebookAuthenticator.id:
+        setSelectedLoginProvider(enabledLoginProvider.facebookAuthenticator.id);
+        return;
+      default:
+        return null;
     }
   };
 
@@ -52,6 +57,9 @@ const Login = () => {
 
       case enabledLoginProvider.googleAuthenticator.id:
         return <LoginWithGoogleAuthenticator />;
+
+      case enabledLoginProvider.facebookAuthenticator.id:
+        return <LoginWithFacebookAuthenticator />;
 
       default:
         return labels.selectLoginProvider;
