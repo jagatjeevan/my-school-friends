@@ -9,6 +9,10 @@ const enabledLoginProvider = {
     id: 'googleAuthenticator',
     label: labels.loginWithGoogleAuth,
   },
+  facebookAuthenticator: {
+    id: 'facebookAuthenticator',
+    label: labels.loginWithFacebook
+  }
 };
 
 export default enabledLoginProvider;

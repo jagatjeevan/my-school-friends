@@ -1,5 +1,6 @@
 import {
   createUserWithEmailAndPassword,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -36,6 +37,16 @@ export const signWithGoogleAuthenticator = () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.log('credential error', credential);
     });
+};
+
+export const signWithFacebookAuthenticator = async () => {
+  const provider = new FacebookAuthProvider();
+  try {
+    const response = await signInWithPopup(auth, provider);
+    return response.user;
+  } catch (error) {
+    console.log('error', error);
+  }
 };
 
 export const logoutUser = () => signOut(auth);

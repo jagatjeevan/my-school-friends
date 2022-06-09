@@ -3,6 +3,11 @@ const labels = {
   selectLoginProvider: 'Select a login method to proceed',
   loginWithEmailAndPassword: 'Email and password',
   loginWithGoogleAuth: 'Google authenticator',
+  loginWithFacebook: 'Facebook authenticator',
+
+  loginButton: {
+    loginWithFacebook: 'Login with facebook',
+  },
 
   emailAddress: 'Email address',
   password: 'Password',
