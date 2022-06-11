@@ -2,12 +2,20 @@ import {
   createUserWithEmailAndPassword,
   FacebookAuthProvider,
   GoogleAuthProvider,
+  linkWithCredential,
   onAuthStateChanged,
+  signInWithCredential,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
 import { auth } from './utils';
+
+export const fetchProvidersWithEmail = (cred) => {
+  signInWithCredential(auth, cred)
+    .then((user) => linkWithCredential(user, cred))
+    .catch((err) => console.log(err));
+};
 
 export const createUserWithEmailPassword = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
@@ -45,6 +53,7 @@ export const signWithFacebookAuthenticator = async () => {
     const response = await signInWithPopup(auth, provider);
     return response.user;
   } catch (error) {
+    const errValue = error;
     console.log('error', error);
   }
 };

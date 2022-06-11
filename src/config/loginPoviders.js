@@ -1,6 +1,6 @@
 import labels from './label';
 
-const enabledLoginProvider = {
+export const enabledLoginProvider = {
   loginWithEmailAndPassword: {
     id: 'loginWithEmailAndPassword',
     label: labels.loginWithEmailAndPassword,
@@ -15,4 +15,8 @@ const enabledLoginProvider = {
   }
 };
 
-export default enabledLoginProvider;
+export const providerName = {
+  facebook: "facebook",
+  google: "google",
+  twitter: "twitter"
+}

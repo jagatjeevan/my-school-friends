@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import labels from '../../config/label';
-import enabledLoginProvider from '../../config/loginPoviders';
+import { enabledLoginProvider } from '../../config/loginPoviders';
 import Panel from '../panel';
 import LoginWithEmailAndPassword from './LoginWithEmailAndPassword';
 import LoginWithFacebookAuthenticator from './LoginWithFacebookAuthenticator';
