@@ -3,6 +3,7 @@ import {
   FacebookAuthProvider,
   GoogleAuthProvider,
   linkWithCredential,
+  linkWithPopup,
   onAuthStateChanged,
   signInWithCredential,
   signInWithEmailAndPassword,
@@ -50,7 +51,7 @@ export const signWithGoogleAuthenticator = () => {
 export const signWithFacebookAuthenticator = async () => {
   const provider = new FacebookAuthProvider();
   try {
-    const response = await signInWithPopup(auth, provider);
+    const response = await linkWithPopup(auth, provider);
     return response.user;
   } catch (error) {
     const errValue = error;
