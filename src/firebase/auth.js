@@ -51,9 +51,13 @@ export const signWithGoogleAuthenticator = () => {
 export const signWithFacebookAuthenticator = async () => {
   // eslint-disable-next-line no-debugger
   debugger;
+  
   const provider = new FacebookAuthProvider();
+  console.log("provider", provider);
+  console.log("auth", auth);
+
   try {
-    const response = await linkWithPopup(auth.currentUser, provider);
+    const response = await linkWithPopup(auth?.currentUser, provider);
     return response.user;
   } catch (error) {
     const errValue = error;
