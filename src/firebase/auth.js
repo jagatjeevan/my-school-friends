@@ -48,21 +48,19 @@ export const signWithGoogleAuthenticator = () => {
     });
 };
 
-export const signWithFacebookAuthenticator = async () => {
+export const signWithFacebookAuthenticator = () => {
   // eslint-disable-next-line no-debugger
   debugger;
   
   const provider = new FacebookAuthProvider();
   console.log("provider", provider);
   console.log("auth", auth);
+  const currentUser = auth ? auth.currentUser : auth;
 
-  try {
-    const response = await linkWithPopup(auth?.currentUser, provider);
-    return response.user;
-  } catch (error) {
-    const errValue = error;
-    console.log('error', error);
-  }
+  linkWithPopup(currentUser, provider).then(res => res.user).catch(err => {
+    console.log("error from link with popup", err);
+    return err;
+  });
 };
 
 export const logoutUser = () => signOut(auth);
